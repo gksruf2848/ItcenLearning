@@ -2,7 +2,7 @@ package Itcen_12_ex;
 
 public class Student {
 	public static int serialNum = 1000;
-	public String name;
+	public static String name;
 	public int studentID;
 	
 	public Student() {
@@ -10,5 +10,15 @@ public class Student {
 		studentID = serialNum;
 	}
 	
+	static void namePrint() {
+		System.out.println(name);
+	}
 	
+	public static int getSerialNum() {
+		return serialNum;
+	}
+	
+	public static void setSerialNum() {
+		Student.serialNum = serialNum;
+	}
 }

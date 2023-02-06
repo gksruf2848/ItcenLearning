@@ -11,6 +11,8 @@ public class StudentTest {
 		System.out.println(st2.serialNum);
 		System.out.println(Student.serialNum);
 		
+		Student.name = "임한결";
+		Student.namePrint();
 	}
 
 }
