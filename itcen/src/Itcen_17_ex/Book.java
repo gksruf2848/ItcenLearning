@@ -1,4 +1,4 @@
-package Itcen_17.ex;
+package Itcen_17_ex;
 
 public class Book {
 	private String bookName;

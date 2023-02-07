@@ -1,4 +1,4 @@
-package Itcen_18.ex;
+package Itcen_18_ex;
 
 public class Student {
 	private String name;
