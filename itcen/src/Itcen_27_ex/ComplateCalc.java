@@ -17,4 +17,9 @@ public class ComplateCalc extends Calculator {
 		System.out.println("Calc 인터페이스 구현");
 	}
 
+	@Override
+	public void description() {
+		System.out.println("재정의한 디폴트메소드");
+	}
+
 }
