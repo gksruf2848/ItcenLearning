@@ -16,6 +16,7 @@ public class CalTest {
 		
 		System.out.println(Calc.total(arr));
 
+		
 	}
 
 }
