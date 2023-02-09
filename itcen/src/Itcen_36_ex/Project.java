@@ -54,7 +54,12 @@ public class Project {
                 }
                 else if(act == 3) {
                 	//고객 정보 삭제
-                System.out.println("삭제");                
+                	System.out.println("고객정보를 삭제합니다.");
+                	System.out.println("삭제하실 번호를 입력하세요.");
+                	int num = sc.nextInt();
+                	sql = "delete from user where unm = "+num;
+                	stmt.executeUpdate(sql);
+                	System.out.println("삭제 완료");
                 }
                 else if(act == 4) {
                 	//고객 정보 출력
