@@ -104,7 +104,35 @@ public class Project {
                 }
                 else if(act == 5) {
                 	//고객정보 검색
-                System.out.println("검색");	
+                	System.out.println("고객 정보를 검색합니다.");
+                	System.out.println("1. 번호 검색 2. 이름 검색 3. 핸드폰 검색");
+                	System.out.print("입력> ");
+                	int num = sc.nextInt();
+                	
+                	if(num == 1) {
+                		System.out.print("고객 번호 입력> ");
+                		int s = sc.nextInt();
+                		sql = "select * from user where unm = " + s;
+                	} else if(num == 2) {
+                		System.out.print("이름 번호 입력> ");
+                		String s = sc.next();
+                		sql = "select * from user where uname = '" + s + "'";                		
+                	} else if(num == 3) {
+                		System.out.print("전화번호 입력> ");
+                		String s = sc.next();
+                		sql = "select * from user where phone = '" + s + "'";
+                	} else {
+                		System.out.println("잘못된 입력입니다.");
+                		continue;
+                	}
+                	rs = stmt.executeQuery(sql);
+                	while(rs.next()) {
+                		System.out.print("번호: " + rs.getInt("unm"));
+                		System.out.print("\t이름: " + rs.getString("uname"));
+                		System.out.print("\t전화번호: " + rs.getString("phone"));
+                		System.out.print("\t주소: " + rs.getString("address"));
+                		System.out.println();
+                	}
                 }
                 else {
                 	System.out.println("프로그램 종료");
@@ -117,10 +145,10 @@ public class Project {
 			//System.out.println("mysql 연결해제 성공");
 			}
 			catch(ClassNotFoundException e) {
-			System.out.println("mysql driver 미설치 또는 드라이버 이름 오류");
+				System.out.println("mysql driver 미설치 또는 드라이버 이름 오류");
 			}
 			catch(SQLException e) {
-			System.out.println("DB접속오류");
+				System.out.println("DB접속오류");
 			}
 	}
 
