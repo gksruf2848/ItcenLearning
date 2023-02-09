@@ -50,13 +50,42 @@ public class Project {
                 }
                 else if(act == 2) {
                 	//고객정보변경
-               System.out.println("변경");
+                	System.out.println("고객 정보를 변경합니다.");
+                	System.out.print("변경하실 고객의 번호를 입력하세요.> ");
+                	int num = sc.nextInt();
+                	
+                	System.out.println("1. 이름 변경 2. 전화번호 변경 3. 주소 변경");
+                	System.out.print("입력> ");
+                	int num2 = sc.nextInt();
+                	
+                	if(num2 == 1) {
+                		work = "uname";
+                		System.out.println("새 이름 입력> ");
+                		
+                	} else if(num2 == 2) {
+                		work = "phone";
+                		System.out.println("새 번호 입력");
+                	} else if(num2 == 3) {
+                		work = "address";
+                		System.out.println("새 주소 입력");
+                	} else {
+                		System.out.println("잘못된 입력입니다.");
+                		continue;
+                	}
+                	sc.nextLine();
+                	String s = sc.nextLine();
+                	
+                	sql = "update user set "+work+" = '"+s+"' where unm = " + num;
+                	stmt.executeUpdate(sql);
+                	System.out.println("변경되었습니다.");
                 }
+                
                 else if(act == 3) {
                 	//고객 정보 삭제
                 	System.out.println("고객정보를 삭제합니다.");
-                	System.out.println("삭제하실 번호를 입력하세요.");
+                	System.out.print("삭제하실 번호를 입력하세요.> ");
                 	int num = sc.nextInt();
+                	
                 	sql = "delete from user where unm = "+num;
                 	stmt.executeUpdate(sql);
                 	System.out.println("삭제 완료");
