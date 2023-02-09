@@ -1,6 +1,7 @@
 package Itcen_36_ex;
 import java.sql.*;
 import java.util.Scanner;
+
 public class Project {
 
 	public static void main(String[] args) {
@@ -64,10 +65,10 @@ public class Project {
                 		
                 	} else if(num2 == 2) {
                 		work = "phone";
-                		System.out.println("새 번호 입력");
+                		System.out.println("새 번호 입력> ");
                 	} else if(num2 == 3) {
                 		work = "address";
-                		System.out.println("새 주소 입력");
+                		System.out.println("새 주소 입력> ");
                 	} else {
                 		System.out.println("잘못된 입력입니다.");
                 		continue;
