@@ -38,14 +38,15 @@ public class Project {
                 	int unm = sc.nextInt();
                 	System.out.print("이름을 입력해 주세요.> ");
                 	String uname = sc.next();
-                	System.out.print("번호를 입력해 주세요.> ");
+                	System.out.print("전화번호를 입력해 주세요.> ");
                 	String phone = sc.next();
                 	System.out.print("주소를 입력해 주세요.> ");
                 	sc.nextLine(); //강제 개행 문자 제거
                 	String address = sc.nextLine();
                 	
                 	sql = "insert into user values("+unm+", '"+uname+"', '"+phone+"', '"+address+"')";
-                	System.out.println(sql);
+                	stmt.executeUpdate(sql); //db에 삽입
+                	System.out.println(uname + "님의 정보 등록 완료");
                 }
                 else if(act == 2) {
                 	//고객정보변경
@@ -57,7 +58,15 @@ public class Project {
                 }
                 else if(act == 4) {
                 	//고객 정보 출력
-                System.out.println("출력");	
+                	sql = "select * from user";
+                	rs = stmt.executeQuery(sql);
+                	while(rs.next()) {
+                		System.out.print("번호: " + rs.getInt("unm"));
+                		System.out.print("\t이름: " + rs.getString("uname"));
+                		System.out.print("\t전화번호: " + rs.getString("phone"));
+                		System.out.print("\t주소: " + rs.getString("address"));
+                		System.out.println();
+                	}
                 }
                 else if(act == 5) {
                 	//고객정보 검색
