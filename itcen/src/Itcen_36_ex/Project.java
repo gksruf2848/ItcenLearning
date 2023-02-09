@@ -33,7 +33,19 @@ public class Project {
 
                 if(act == 1) {
                 	//고객정보추가
-                System.out.println("추가");
+                	System.out.println("고객정보를 추가합니다.");
+                	System.out.print("번호를 입력해 주세요.> ");
+                	int unm = sc.nextInt();
+                	System.out.print("이름을 입력해 주세요.> ");
+                	String uname = sc.next();
+                	System.out.print("번호를 입력해 주세요.> ");
+                	String phone = sc.next();
+                	System.out.print("주소를 입력해 주세요.> ");
+                	sc.nextLine(); //강제 개행 문자 제거
+                	String address = sc.nextLine();
+                	
+                	sql = "insert into user values("+unm+", '"+uname+"', '"+phone+"', '"+address+"')";
+                	System.out.println(sql);
                 }
                 else if(act == 2) {
                 	//고객정보변경
